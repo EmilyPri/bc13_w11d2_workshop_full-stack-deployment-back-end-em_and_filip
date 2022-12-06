@@ -1,9 +1,9 @@
 import { pool } from "../db/index.js";
 
-export async function getShoppingList(id) {
-  const data = await pool.query("SELECT * FROM shopping WHERE id=$1;", [id]);
-  console.log("The shopping list is", data.rows[0]);
-  return data.rows[0];
+export async function getShoppingList() {
+  const data = await pool.query("SELECT * FROM shopping;");
+  console.log("The shopping list is", data.rows);
+  return data.rows;
 }
 
 export async function postListItem(listItem) {
