@@ -5,7 +5,7 @@ const router = express.Router();
 
 /* GET shopping list. */
 router.get("/:id", async (req, res) => {
-  const data = await getShoppingList(req.params);
+  const data = await getShoppingList(req.params.id);
   res.json({ success: true, payload: data });
 });
 
