@@ -20,7 +20,7 @@ export async function postListItem(listItem) {
 
 export async function markCompleted(id, completed){
   const data = await pool.query(
-    `UPDATE shopping SET (completed = $1) WHERE id=$2 RETURNING *;`,
+    `UPDATE shopping SET completed = $1 WHERE id=$2 RETURNING *;`,
     [completed, id]
   );
   return data.rows[0];
