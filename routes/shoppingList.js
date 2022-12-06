@@ -16,8 +16,9 @@ router.post("/", async (req, res) => {
 });
 
 router.patch("/:id", async (req, res) => {
-  const { listItem } = req.body.params;
-  const result = await updateListItem(listItem);
+  // const listItemId = ();
+  // const updatedComplete = ;
+  const result = await updateListItem(req.params.id,req.body);
   res.status(201).json({ success: true, payload: result });
 });
 
