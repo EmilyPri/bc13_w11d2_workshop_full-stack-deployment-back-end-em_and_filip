@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
 router.patch("/:id", async (req, res) => {
   // const listItemId = ();
   // const updatedComplete = ;
-  const result = await markCompleted(req.params.id, req.body);
+  const result = await markCompleted(req.params.id, req.body.completed);
   res.status(201).json({ success: true, payload: result });
 });
 
